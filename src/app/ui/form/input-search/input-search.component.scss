@@ -1,0 +1,41 @@
+:host {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+:host svg {
+    color: white;
+    z-index: 100;
+}
+
+:host .input {
+    border-radius: 4px;
+    //padding: 4px 4px 4px 16px;
+    //width: 610px; //TODO: delete
+    width: 0;
+    height: 48px;
+    box-sizing: border-box;
+
+    transition: all 0.5s ease-out;
+
+    background: #fff;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0;
+    color: #2a3033;
+
+    position: absolute;
+    right: 10px;
+
+    &.active {
+        width: 610px;
+        padding: 4px 4px 4px 16px;
+    }
+
+    &::placeholder {
+        color: #9aa1a6;
+    }
+}

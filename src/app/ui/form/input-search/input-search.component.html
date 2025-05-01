@@ -1,0 +1,10 @@
+<input
+    class="input {{isActive() ? 'active' : '' }}"
+    [placeholder]="'Поисковый запрос'"
+    (click)="onInputClick($event)"
+    (focus)="onInputFocus()"
+    (blur)="onInputBlur()"
+>
+<app-button-icon (buttonClick)="onSearchButtonClick()"><svg app-search-icon></svg></app-button-icon>
+
+

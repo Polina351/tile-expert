@@ -7,3 +7,15 @@ body {
     margin: 0;
     padding: 0;
 }
+
+input, textarea, select, button {
+    all: unset;
+    box-sizing: border-box;
+    font-family: inherit;
+    outline: none;
+
+    &:focus {
+        border: none;
+        outline: none
+    }
+}
