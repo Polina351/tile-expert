@@ -1,0 +1,19 @@
+:host {
+    display: block;
+    padding: 20px 16px 10px 16px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0;
+    color: #2a3033;
+    & .title {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 127%;
+        letter-spacing: 0;
+        color: #7f878c;
+    }
+}

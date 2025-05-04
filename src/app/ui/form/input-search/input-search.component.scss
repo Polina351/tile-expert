@@ -10,8 +10,6 @@
 
 :host .input {
     border-radius: 4px;
-    //padding: 4px 4px 4px 16px;
-    //width: 610px; //TODO: delete
     width: 0;
     height: 48px;
     box-sizing: border-box;
@@ -28,10 +26,11 @@
     color: #2a3033;
 
     position: absolute;
-    right: 10px;
+    right: -8px;
+    z-index: 50;
 
     &.active {
-        width: 610px;
+        width: 704px;
         padding: 4px 4px 4px 16px;
     }
 

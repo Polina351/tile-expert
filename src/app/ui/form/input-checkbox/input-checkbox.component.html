@@ -1,0 +1,12 @@
+<label class="custom-checkbox">
+    <input
+        type="checkbox"
+        [name]="name()"
+        [checked]="value()"
+        [disabled]="disabled()"
+        (change)="toggleCheckbox()"
+        style="display: none;"
+    >
+    <span class="custom-checkbox__checkmark" [class.checked]="value()"></span>
+    <span class="custom-checkbox__label">{{ label() }}</span>
+</label>

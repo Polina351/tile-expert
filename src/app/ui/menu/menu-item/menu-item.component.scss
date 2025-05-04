@@ -10,4 +10,12 @@
     line-height: 143%;
     letter-spacing: 0em;
     color: #fff;
+
+    & .icon-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+    }
 }

@@ -2,22 +2,35 @@
     <img src="logo.png" alt="logo">
 </a>
 
-<app-menu>
-    <app-menu-item [label]="'Ссылки'"><svg app-link-icon></svg></app-menu-item>
-    <app-menu-item [label]="'Контакты'"><svg app-contacts-icon></svg></app-menu-item>
-    <app-menu-item [label]="'Теги'"><svg app-tag-icon></svg></app-menu-item>
-    <app-menu-item [label]="'Избранное'"><svg app-favorites-icon></svg></app-menu-item>
-    <app-menu-item [label]="'Посещения'"><svg app-history-icon></svg></app-menu-item>
-</app-menu>
+<div class="menu">
+    <app-menu>
+        <app-menu-item [label]="'Ссылки'"><svg app-link-icon></svg></app-menu-item>
+        <app-menu-item [label]="'Контакты'"><svg app-contacts-icon></svg></app-menu-item>
+        <app-menu-item [label]="'Теги'"><svg app-tag-icon></svg></app-menu-item>
+        <app-menu-item [label]="'Избранное'"><svg app-favorites-icon></svg></app-menu-item>
+        <app-menu-item [label]="'Посещения'"><svg app-history-icon></svg></app-menu-item>
+    </app-menu>
 
-<app-input-search
-    [isActive]="isActiveSearch()"
-    (searchButtonClick)="onSearchButtonClick()"
-    (inputFocus)="onInputFocus()"
-    (inputBlur)="onInputBlur()"
-/>
+    <app-input-search
+        [isActive]="isActiveSearch()"
+        (searchButtonClick)="onSearchButtonClick()"
+        (inputFocus)="onInputFocus()"
+        (inputBlur)="onInputBlur()"
+    />
 
-@if (isActiveFilter()) {
-    <p>filters</p>
-}
+
+    @if (isActiveFilter()) {
+        <app-filters [checkboxGroups]="checkboxGroups">
+            <app-history [historyItems]="searchHistoryList"></app-history>
+        </app-filters>
+    }
+</div>
+
+<app-button-icon><svg app-add-icon></svg></app-button-icon>
+
+<div class="user-info">
+    <app-header-notifications/>
+    <img src="AVA.png" alt="avatar">
+</div>
+
 

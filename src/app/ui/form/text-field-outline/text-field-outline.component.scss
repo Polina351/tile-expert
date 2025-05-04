@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    width: 100%;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 133%;
+    letter-spacing: 0;
+    color: #8c9499;
+}
+
+:host input {
+    &::placeholder {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        letter-spacing: 0;
+        color: #9aa1a6;
+    }
+}
+
+:host fieldset {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    border: 1px solid #e1e4e6;
+    //padding: 12px 12px 12px 16px;
+    //width: 440px;
+    height: 55px;
+}
