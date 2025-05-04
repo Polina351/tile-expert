@@ -7,6 +7,18 @@
     background: #1074cc;
     padding: 0 12px 0 16px;
     color: white;
+
+    @media (max-width: 1030px) {
+        padding: 0 8px 0 16px;
+    }
+}
+
+:host .burger {
+    display: none;
+    @media (max-width: 1030px) {
+        display: flex;
+    }
+
 }
 
 :host .menu {
@@ -14,12 +26,22 @@
     display: flex;
     align-items: center;
     gap: 16px;
+
+    @media (max-width: 1030px) {
+        display: none;
+    }
 }
 
 :host app-filters {
     position: absolute;
     top: 54px;
     left: 0;
+}
+
+:host .add-button {
+    @media (max-width: 1030px) {
+        display: none;
+    }
 }
 
 :host svg {
@@ -32,6 +54,22 @@
     justify-content: center;
     gap: 16px;
     margin-left: auto;
+
+    @media (max-width: 1030px) {
+        display: none;
+    }
+}
+
+:host .mobile-buttons-block {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-left: auto;
+
+    @media (max-width: 1030px) {
+        display: flex;
+    }
 }
 
 

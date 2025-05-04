@@ -1,3 +1,5 @@
+<app-button-icon class="burger"><svg app-burger-icon></svg></app-button-icon>
+
 <a href="#">
     <img src="logo.png" alt="logo">
 </a>
@@ -26,11 +28,30 @@
     }
 </div>
 
-<app-button-icon><svg app-add-icon></svg></app-button-icon>
+<app-button-icon class="add-button"><svg app-add-icon></svg></app-button-icon>
+
 
 <div class="user-info">
     <app-header-notifications/>
     <img src="AVA.png" alt="avatar">
+</div>
+
+<div class="mobile-buttons-block">
+    <app-button-icon><svg app-add-icon></svg></app-button-icon>
+    <app-button-icon><svg app-history-icon></svg></app-button-icon>
+    <app-input-search
+        [isActive]="isActiveSearch()"
+        (searchButtonClick)="onSearchButtonClick()"
+        (inputFocus)="onInputFocus()"
+        (inputBlur)="onInputBlur()"
+    />
+
+    @if (isActiveFilter()) {
+        <app-filters [checkboxGroups]="checkboxGroups">
+            <app-history [historyItems]="searchHistoryList"></app-history>
+        </app-filters>
+    }
+    <app-header-notifications/>
 </div>
 
 

@@ -15,6 +15,7 @@ import {AddIconComponent} from '../../../icons/add-icon/add-icon.component';
 import {
     HeaderNotificationsComponent
 } from '../../../ui/notifications/header-notifications/header-notifications.component';
+import {BurgerIconComponent} from '../../../icons/burger-icon/burger-icon.component';
 
 @Component({
     selector: 'app-header',
@@ -31,7 +32,8 @@ import {
         HistoryComponent,
         ButtonIconComponent,
         AddIconComponent,
-        HeaderNotificationsComponent
+        HeaderNotificationsComponent,
+        BurgerIconComponent
     ],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',

@@ -29,4 +29,8 @@
     letter-spacing: 0;
     text-align: center;
     color: #fff;
+
+    @media (max-width: 1030px) {
+        display: none;
+    }
 }
