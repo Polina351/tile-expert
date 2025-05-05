@@ -1,10 +1,10 @@
+<app-button-icon class="mobile-visible" (buttonClick)="onBackButtonClick()"><svg app-arrow-back-icon></svg></app-button-icon>
 <input
     class="input {{isActive() ? 'active' : '' }}"
     [placeholder]="'Поисковый запрос'"
     (click)="onInputClick($event)"
     (focus)="onInputFocus()"
-    (blur)="onInputBlur()"
 >
-<app-button-icon (buttonClick)="onSearchButtonClick()"><svg app-search-icon></svg></app-button-icon>
+<app-button-icon class="mobile-non" (buttonClick)="onSearchButtonClick()"><svg app-search-icon></svg></app-button-icon>
 
 

@@ -14,16 +14,15 @@
     </app-menu>
 
     <app-input-search
-        [isActive]="isActiveSearch()"
-        (searchButtonClick)="onSearchButtonClick()"
-        (inputFocus)="onInputFocus()"
-        (inputBlur)="onInputBlur()"
+        [isActive]="searchFiltersService.isActiveSearch()"
+        (searchButtonClick)="searchFiltersService.onSearchButtonClick()"
+        (inputFocus)="searchFiltersService.onInputFocus()"
     />
 
 
-    @if (isActiveFilter()) {
-        <app-filters [checkboxGroups]="checkboxGroups">
-            <app-history [historyItems]="searchHistoryList"></app-history>
+    @if (searchFiltersService.isActiveFilter()) {
+        <app-filters [checkboxGroups]="searchFiltersService.checkboxGroups">
+            <app-history [historyItems]="searchFiltersService.searchHistoryList"></app-history>
         </app-filters>
     }
 </div>
@@ -39,18 +38,19 @@
 <div class="mobile-buttons-block">
     <app-button-icon><svg app-add-icon></svg></app-button-icon>
     <app-button-icon><svg app-history-icon></svg></app-button-icon>
-    <app-input-search
-        [isActive]="isActiveSearch()"
-        (searchButtonClick)="onSearchButtonClick()"
-        (inputFocus)="onInputFocus()"
-        (inputBlur)="onInputBlur()"
-    />
+    <app-button-icon (buttonClick)="searchFiltersService.openSearchInputMobile()"><svg app-search-icon></svg></app-button-icon>
 
-    @if (isActiveFilter()) {
-        <app-filters [checkboxGroups]="checkboxGroups">
-            <app-history [historyItems]="searchHistoryList"></app-history>
-        </app-filters>
-    }
+<!--    <app-input-search-->
+<!--        [isActive]="searchFiltersService.isActiveSearch()"-->
+<!--        (searchButtonClick)="searchFiltersService.onSearchButtonClick()"-->
+<!--        (inputFocus)="searchFiltersService.onInputFocus()"-->
+<!--    />-->
+
+<!--    @if (searchFiltersService.isActiveFilter()) {-->
+<!--        <app-filters [checkboxGroups]="searchFiltersService.checkboxGroups">-->
+<!--            <app-history [historyItems]="searchFiltersService.searchHistoryList"></app-history>-->
+<!--        </app-filters>-->
+<!--    }-->
     <app-header-notifications/>
 </div>
 

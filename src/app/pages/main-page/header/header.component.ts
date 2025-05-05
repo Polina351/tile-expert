@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, signal, WritableSignal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, signal, WritableSignal} from '@angular/core';
 import {MenuComponent} from '../menu/menu.component';
 import {MenuItemComponent} from '../../../ui/menu/menu-item/menu-item.component';
 import {LinkIconComponent} from '../../../icons/link-icon/link-icon.component';
@@ -16,6 +16,8 @@ import {
     HeaderNotificationsComponent
 } from '../../../ui/notifications/header-notifications/header-notifications.component';
 import {BurgerIconComponent} from '../../../icons/burger-icon/burger-icon.component';
+import {SearchFiltersService} from '../services/search-filters.service';
+import {SearchIconComponent} from '../../../icons/search-icon/search-icon.component';
 
 @Component({
     selector: 'app-header',
@@ -33,69 +35,19 @@ import {BurgerIconComponent} from '../../../icons/burger-icon/burger-icon.compon
         ButtonIconComponent,
         AddIconComponent,
         HeaderNotificationsComponent,
-        BurgerIconComponent
+        BurgerIconComponent,
+        SearchIconComponent
     ],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
-        '(click)': 'onHeaderClick()',
+        '(click)': 'this.searchFiltersService.searchInputClose()',
     }
 })
 export class HeaderComponent {
-    protected isActiveSearch: WritableSignal<boolean> = signal(false);
-    protected isActiveFilter: WritableSignal<boolean> = signal(false);
 
-    protected searchHistoryList: string[] = [
-        'закрепить теги',
-        'кнопка',
-        'приложение',
-        'форма',
-        'текстовое поле'
-    ];
+    protected searchFiltersService: SearchFiltersService = inject(SearchFiltersService);
 
-    protected checkboxGroups: ICheckboxGroup[] = [
-        {
-            groupName: '',
-            groupKey: 'main',
-            items: [
-                { label: 'Я участник', name: 'isParticipant', checked: false },
-                { label: 'Строгий поиск', name: 'strictSearch', checked: false },
-                { label: 'В заголовках', name: 'inHeaders', checked: false }
-            ]
-        },
-        {
-            groupName: 'Только',
-            groupKey: 'only',
-            items: [
-                { label: 'Теги', name: 'tags', checked: false },
-                { label: 'Просьбы', name: 'requests', checked: false },
-                { label: 'Контакты', name: 'contacts', checked: false }
-            ]
-        }
-    ];
 
-    protected onSearchButtonClick(): void {
-
-        if (!this.isActiveSearch()) {
-            this.isActiveSearch.set(true);
-        }
-    }
-
-    protected onHeaderClick(): void {
-        console.log('Header clicked');
-
-        if (this.isActiveSearch()) {
-            this.isActiveSearch.set(false);
-            this.isActiveFilter.set(false);
-        }
-    }
-
-    protected onInputFocus(): void {
-        this.isActiveFilter.set(true);
-    }
-
-    protected onInputBlur(): void {
-        //this.isActiveFilter.set(false);
-    }
 }

@@ -1,37 +1,41 @@
 import {ChangeDetectionStrategy, Component, input, InputSignal, output, OutputEmitterRef} from '@angular/core';
 import { ButtonIconComponent } from '../../buttons/button-icon/button-icon.component';
 import { SearchIconComponent } from '../../../icons/search-icon/search-icon.component';
+import {ArrowBackIconComponent} from '../../../icons/arrow-back-icon/arrow-back-icon.component';
 
 @Component({
-  selector: 'app-input-search',
+    selector: 'app-input-search',
     imports: [
         ButtonIconComponent,
-        SearchIconComponent
+        SearchIconComponent,
+        ArrowBackIconComponent
     ],
-  templateUrl: './input-search.component.html',
-  styleUrl: './input-search.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    templateUrl: './input-search.component.html',
+    styleUrl: './input-search.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputSearchComponent {
     isActive: InputSignal<boolean> = input<boolean>(false);
 
     searchButtonClick: OutputEmitterRef<void> = output<void>();
+    backButtonClick: OutputEmitterRef<void> = output<void>();
     inputFocus: OutputEmitterRef<void> = output<void>();
     inputBlur: OutputEmitterRef<void> = output<void>();
 
-    protected onSearchButtonClick(): void {
+    public onSearchButtonClick(): void {
         this.searchButtonClick.emit();
     }
 
-    protected onInputClick(event: MouseEvent) {
+    public onInputClick(event: MouseEvent): void {
         event.stopPropagation();
     }
 
-    protected onInputFocus() {
+    public onInputFocus(): void {
         this.inputFocus.emit();
     }
 
-    protected onInputBlur() {
-        this.inputBlur.emit();
+    public onBackButtonClick(): void {
+        this.backButtonClick.emit();
     }
+
 }

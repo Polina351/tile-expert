@@ -3,10 +3,19 @@
     position: relative;
     align-items: center;
 
+    @media (max-width: 1030px) {
+        background: #fff;
+        padding: 4px 16px;
+    }
+
 }
-:host svg {
+:host svg[app-search-icon] {
     color: white;
     z-index: 100;
+}
+
+:host svg[app-arrow-back-icon] {
+    color: #2A3033;
 }
 
 :host .input {
@@ -34,9 +43,31 @@
         width: 704px;
         padding: 4px 4px 4px 16px;
 
+        @media (max-width: 1030px) { //скорее всего это просто в инпут, без active
+            width: 100%;
+            border-radius: 24px;
+            padding: 12px 16px 12px 20px;
+            background: #f5f5f5;
+            color: #9aa1a6;
+            position: relative;
+        }
+
     }
 
     &::placeholder {
         color: #9aa1a6;
+    }
+}
+
+:host .mobile-non {
+    @media (max-width: 1030px) {
+        display: none;
+    }
+}
+
+:host .mobile-visible {
+    display: none;
+    @media (max-width: 1030px) {
+        display: flex;
     }
 }
