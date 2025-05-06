@@ -1,0 +1,73 @@
+:host {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    @media (max-width: 1030px) {
+        background: #fff;
+        padding: 4px 16px;
+    }
+
+}
+:host svg[app-search-icon] {
+    color: white;
+    z-index: 100;
+}
+
+:host svg[app-arrow-back-icon] {
+    color: #2A3033;
+}
+
+:host .input {
+    border-radius: 4px;
+    width: 0;
+    height: 48px;
+    box-sizing: border-box;
+
+    transition: all 0.5s ease-out;
+
+    background: #fff;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0;
+    color: #2a3033;
+
+    position: absolute;
+    right: -8px;
+    z-index: 50;
+
+    &.active {
+        width: 704px;
+        padding: 4px 4px 4px 16px;
+
+        @media (max-width: 1030px) { //скорее всего это просто в инпут, без active
+            width: 100%;
+            border-radius: 24px;
+            padding: 12px 16px 12px 20px;
+            background: #f5f5f5;
+            color: #9aa1a6;
+            position: relative;
+        }
+
+    }
+
+    &::placeholder {
+        color: #9aa1a6;
+    }
+}
+
+:host .mobile-non {
+    @media (max-width: 1030px) {
+        display: none;
+    }
+}
+
+:host .mobile-visible {
+    display: none;
+    @media (max-width: 1030px) {
+        display: flex;
+    }
+}

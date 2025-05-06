@@ -1,0 +1,15 @@
+@if(searchFiltersService.isSearchMobileOpen()) {
+    <app-input-search
+        [isActive]="searchFiltersService.isActiveSearch()"
+        (searchButtonClick)="searchFiltersService.onSearchButtonClick()"
+        (inputFocus)="searchFiltersService.onInputFocus()"
+        (backButtonClick)="searchFiltersService.closeSearchInputMobile()"
+    />
+    @if (searchFiltersService.isActiveFilter()) {
+        <app-filters [checkboxGroups]="searchFiltersService.checkboxGroups">
+            <app-history [historyItems]="searchFiltersService.searchHistoryList"></app-history>
+        </app-filters>
+    }
+} @else {
+    <app-header></app-header>
+}

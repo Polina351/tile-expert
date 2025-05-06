@@ -1,0 +1,23 @@
+<div class="container" (click)="onClick($event)">
+    <ng-content></ng-content>
+    <div class="right-col">
+        <app-text-field-outline class="text-field"></app-text-field-outline>
+        <div class="checkbox-container">
+            @for (item of checkboxGroups(); track $index) {
+                <div class="checkbox-group-container">
+                    <div class="group-name">{{item.groupName}}</div>
+                    <div class="checkbox-group">
+                        @for (checkbox of item.items; track $index) {
+                            <app-input-checkbox
+                                [label]="checkbox.label"
+                                [name]="checkbox.name"
+                            />
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+

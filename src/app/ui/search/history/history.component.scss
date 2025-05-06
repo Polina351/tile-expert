@@ -1,0 +1,33 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 0 10px 0;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0;
+    color: #2a3033;
+    & .title {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 127%;
+        letter-spacing: 0;
+        color: #7f878c;
+
+        padding: 0 16px;
+        width: 216px;
+        height: 14px;
+        box-sizing: border-box;
+    }
+
+    & .history-item {
+        padding: 6px 16px;
+        width: 216px;
+        height: 32px;
+        box-sizing: border-box;
+    }
+}
