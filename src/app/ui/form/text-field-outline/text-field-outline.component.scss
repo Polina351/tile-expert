@@ -10,6 +10,8 @@
 }
 
 :host input {
+    display: block;
+    padding: 14px 0;
     &::placeholder {
         font-family: var(--font-family);
         font-weight: 400;
@@ -26,7 +28,7 @@
     justify-content: space-between;
     border-radius: 4px;
     border: 1px solid #e1e4e6;
-    //padding: 12px 12px 12px 16px;
-    //width: 440px;
+    padding: 0 10px 5px 14px;
+    width: 440px;
     height: 55px;
 }

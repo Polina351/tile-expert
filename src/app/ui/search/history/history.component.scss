@@ -1,6 +1,8 @@
 :host {
-    display: block;
-    padding: 20px 16px 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 0 10px 0;
 
     font-family: var(--font-family);
     font-weight: 400;
@@ -15,5 +17,17 @@
         line-height: 127%;
         letter-spacing: 0;
         color: #7f878c;
+
+        padding: 0 16px;
+        width: 216px;
+        height: 14px;
+        box-sizing: border-box;
+    }
+
+    & .history-item {
+        padding: 6px 16px;
+        width: 216px;
+        height: 32px;
+        box-sizing: border-box;
     }
 }
