@@ -62,6 +62,7 @@ export class SearchFiltersService {
         if (!this.isSearchMobileOpen()) {
             this.isSearchMobileOpen.set(true);
             this.isActiveSearch.set(true);
+            this.isActiveFilter.set(true);
         }
     }
 
